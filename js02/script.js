@@ -11,7 +11,7 @@ setInterval(() => {
   hh.style.rotate = hours * 30 + "deg";
   mh.style.rotate = (date.getMinutes() / 60) * 360 + "deg";
   sh.style.rotate = (date.getSeconds() / 60) * 360 + "deg";
-  console.log(hours, date.getMinutes(), date.getSeconds());
+//   console.log(hours, date.getMinutes(), date.getSeconds());
 
   digitaltime.textContent = `${date.getDate()}/${
     date.getMonth() + 1
