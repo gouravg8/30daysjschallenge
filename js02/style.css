@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.doc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20% 0 0 0;
+}
+
+.outerCircle {
+  border: 3px solid black;
+  width: 45vh;
+  height: 45vh;
+  border-radius: 50%;
+  position: relative;
+}
+.hand {
+  position: absolute;
+  top: 50%;
+  height: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  border-radius: 3px;
+}
+.hourhand {
+  left: 30%;
+  width: 20%;
+  background: #000;
+}
+
+.minutehand {
+  left: 16%;
+  width: 34%;
+  background: #d11818;
+}
+
+.secondhand {
+  left: 6%;
+  width: 44%;
+  background: #24af24;
+}
+
+.digitaltime{
+    font-size: 4vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
