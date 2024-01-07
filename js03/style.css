@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  text-align: center;
+}
+
+:root {
+  --space: 0px;
+  --blur: 0px;
+  --color: #000;
+  --scale: 1;
+  --radius: 0%;
+}
+
+.heroimg {
+  z-index: -2;
+  width: 50%;
+  margin: 5vh auto 5vh auto;
+  padding: var(--space);
+  background: var(--color);
+  filter: blur(var(--blur));
+  transform: scale(var(--scale));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.js {
+  color: var(--color);
+}

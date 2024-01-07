@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js03</title>
+    <link rel="shortcut icon" href="https://fav.farm/🙂" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to learnign <span class="js">Javascript</span></h1>
+
+    <img class="heroimg"
+        src="https://www.chalmers.se/_next/image/?url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fmb3hi4kn%2Fcoding-7-1920.jpg%3Fwidth%3D1920%26height%3D1080%26rnd%3D133293116108230000%26quality%3D60%26format%3Dwebp&w=640&q=85"
+        alt="" srcset="">
+
+    <div class="form">
+        <div class="space">
+            <label for="space">Space</label>
+            <input type="range" name="space" id="space" min="0" max="100" data-size="px" value="0">
+        </div>
+        <div class="blur">
+            <label for="blur">Blur</label>
+            <input type="range" name="blur" id="blur" min="0" max="10" data-size="px" value="0">
+        </div>
+
+        <div class="scale">
+            <label for="scale">Scale</label>
+            <input type="range" name="scale" id="scale" min="0.1" max="10" step="0.1" value="0.1">
+        </div>
+
+        <div class="radius">
+            <label for="radius">Radius</label>
+            <input type="range" name="radius" id="radius" min="0" max="100" step="0.1" data-size="%" value="1">
+        </div>
+
+        <div class="color">
+            <label for="color">Color</label>
+            <input type="color" name="color" id="color" value="#0">
+        </div>
+
+        <!-- downloading the image -->
+        <div class="btn-group">
+            <button id="topng">Convert to PNG</button>
+            <button id="tojpeg">Convert to JPEG</button>
+            <button id="saveaspng">Download as PNG</button>
+            <button id="saveasjpeg">Download as JPEG</button>
+        </div>
+    </div>
+    <script src="./script.js" type="module"></script>
+</body>
+
+</html>
