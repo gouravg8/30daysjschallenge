@@ -1,14 +1,17 @@
 body {
   margin: 0;
   padding: 0;
+  color: white;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 3vh;
   width: auto;
-  text-align: center;
+  /* text-align: center; */
+  background-color: #242424;
 }
 
 :root {
@@ -33,4 +36,18 @@ body {
 
 .js {
   color: var(--color);
+}
+#outputImage {
+  /* offset: 100%; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.outimage {
+  width: 100%;
+  height: 100%;
 }
