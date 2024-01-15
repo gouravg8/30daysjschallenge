@@ -3,34 +3,48 @@ const endpoint =
 const inpSearch = document.querySelector(".search");
 let suggestions = document.querySelector(".suggestions");
 
-const makeListItems = (arr) => {
+const makeListItems = (arr, searchVal) => {
   arr.forEach((elem) => {
-    let li = `<li>${elem.city} <span class="population">${elem.population}</span></li>`;
+    let regex = new RegExp(searchVal, "gi");
+    let hlCity = elem.city.replace(
+      regex,
+      `<span class="hl">${searchVal}</span>`
+    );
+    let hlState = elem.state.replace(
+      regex,
+      `<span class="hl">${searchVal}</span>`
+    );
+    let li = `<li>
+    <span class="name">${hlCity}, ${hlState}</span>
+    <span class="population">${elem.population}</span>
+    </li>`;
     suggestions.innerHTML += li;
   });
-  console.log(arr);
+  console.log(arr, Math.random() * 10);
 };
 
 async function getData(searchVal) {
   let data = await fetch(endpoint);
   let json = await data.json();
-
+  let regex = new RegExp(searchVal, "gi");
   let filteredArr = json.filter(
     (obj) =>
-      obj.city.toLowerCase().includes(searchVal) ||
-      obj.state.toLowerCase().includes(searchVal)
+      //   obj.city.toLowerCase().includes(searchVal) ||
+      //   obj.state.toLowerCase().includes(searchVal)
+      obj.city.match(regex) || obj.state.match(regex)
   );
 
-  makeListItems(filteredArr);
+  makeListItems(filteredArr, searchVal);
 }
 
-inpSearch.addEventListener("input", (e) => {
+function handleSearch() {
   suggestions.innerHTML = "";
-  let searchVal = e.target.value;
-//   if (searchVal === "" || searchVal === null) console.log("khali");
-  if (searchVal !== null || searchVal !== "") {
-    getData(searchVal.toLowerCase().trim());
-  } else {
-    alert("Please provide atleast a character");
+  let searchVal = this.value.toLowerCase().trim();
+  //   if (searchVal === "" || searchVal === null) console.log("khali");
+  if (Boolean(searchVal) && searchVal.length > 0) {
+    getData(searchVal);
   }
-});
+}
+
+inpSearch.addEventListener("change", handleSearch);
+inpSearch.addEventListener("keyup", handleSearch);
